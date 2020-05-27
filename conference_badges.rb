@@ -29,7 +29,11 @@ def assign_rooms(array)
 end
 
 def printer(attendees)
-    puts batch_badge_creator(attendees)
-    puts assign_rooms(attendees)
-    binding.pry 
+    batch_badge_creator(attendees).collect do |i|
+      puts i 
+    end
+    rooms = assign_rooms(attendees)
+    rooms.collect do |index|
+      puts index 
+    end
 end 
